@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}New Entry{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="patientName">Patient Name</label>
+    <input name="patientName" id="patientName" value="{{ request.form['patientName'] }}" required>
+    <label for="dob">Date of Birth</label>
+    <input name="dob" id="dob" value="{{ request.form['dob'] }}"required>
+    <label for="diagnosis">Diagnosis</label>
+    <input name="diagnosis" id="diagnosis" value = "{{ request.form['diagnosis'] }}" required>
+    <label for="treatment">Treatment</label>
+    <input name="treatment" id="treatment" value = "{{ request.form['treatment'] }}" required> 
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}
